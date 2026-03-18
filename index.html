@@ -235,23 +235,29 @@
     </p>
 
     <!-- 🔥 Slider Wrapper -->
-    <div class="relative">
+    <!-- 🔥 BUTTON OVERLAY (NO JUMP) -->
+<div class="pointer-events-none absolute inset-0 flex items-center justify-between px-2 z-10">
 
-      <!-- LEFT BUTTON -->
-      <button id="prevBtn"
-        class="btn btn-circle absolute left-0 top-1/2 -translate-y-1/2 z-10">
-        ❮
-      </button>
+  <!-- LEFT -->
+  <button id="prevBtn"
+    class="pointer-events-auto btn btn-circle bg-primary text-white shadow-lg
+           hover:bg-primary-focus w-12 h-12 text-xl">
+    ❮
+  </button>
 
-      <!-- RIGHT BUTTON -->
-      <button id="nextBtn"
-        class="btn btn-circle absolute right-0 top-1/2 -translate-y-1/2 z-10">
-        ❯
-      </button>
+  <!-- RIGHT -->
+  <button id="nextBtn"
+    class="pointer-events-auto btn btn-circle bg-primary text-white shadow-lg
+           hover:bg-primary-focus w-12 h-12 text-xl">
+    ❯
+  </button>
+
+</div>
 
       <!-- SLIDER TRACK -->
       <div id="projectSlider"
         class="flex gap-8 transition-transform duration-500">
+
 <!-- Card -1  -->
         <!-- 🔥 E-VOTING APP (FIGMA DESIGN) -->
 <div class="card bg-base-100 shadow-xl min-w-full md:min-w-[32%]">
@@ -282,11 +288,11 @@
         <!-- Card -2 🔥 TEAM MEMBER 1 PORTFOLIO -->
 <div class="card bg-base-100 shadow-xl min-w-full md:min-w-[32%]">
   <figure>
-    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+    <img src="./assets/photo/injamamul.jpg">
   </figure>
 
   <div class="card-body">
-    <h3 class="card-title">Portfolio — Team Member 1</h3>
+    <h3 class="card-title">Portfolio — Injamamul Hoq </h3>
     <p>Personal portfolio website showcasing skills and projects.</p>
 
     <!-- 🔥 LIVE LINK -->
@@ -303,11 +309,11 @@
 <!-- Card -3 🔥 TEAM MEMBER 2 PORTFOLIO -->
 <div class="card bg-base-100 shadow-xl min-w-full md:min-w-[32%]">
   <figure>
-    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+    <img src="./assets/photo/sazid.jpg">
   </figure>
 
   <div class="card-body">
-    <h3 class="card-title">Portfolio — Team Member 2</h3>
+    <h3 class="card-title">Portfolio — Sazid Hassan</h3>
     <p>Creative developer portfolio with UI/UX projects.</p>
 
     <!-- 🔥 LIVE LINK -->
@@ -329,14 +335,40 @@
 
   <div class="card-body">
 
-    <h3 class="card-title">E-Voting App — UI/UX Design</h3>
+    <h3 class="card-title">Fitness App — UI/UX Design</h3>
 
     <p>
-      Secure online voting system designed in Figma with modern UI/UX principles.
+     A clean, user-friendly fitness app designed to motivate users and 
+     support their goals through simple and visually engaging design.
     </p>
 
     <!-- 🔥 FIGMA LINK BUTTON -->
     <a href="https://www.figma.com/design/LpKE6LblNOMTOlVv8NKOaQ/Assingment-class-01?node-id=0-1&p=f"
+       target="_blank"
+       class="btn btn-primary btn-sm">
+       View Figma Design 
+    </a>
+
+  </div>
+
+</div>
+<!-- Card -4  Fitness App  -->
+ <div class="card bg-base-100 shadow-xl min-w-full md:min-w-[32%]">
+
+  <figure>
+    <img src="./assets/photo/Unlock App.jpg">
+  </figure>
+
+  <div class="card-body">
+
+    <h3 class="card-title">E-Voting App — UI/UX Design</h3>
+
+    <p>
+      An intuitive platform for learning, growing, and mastering new skills anytime, anywhere.
+    </p>
+
+    <!-- 🔥 FIGMA LINK BUTTON -->
+    <a href="https://www.figma.com/design/Yb4iewfZ5SaGfc9NFguoB0/larning-platfrom?node-id=1-6"
        target="_blank"
        class="btn btn-primary btn-sm">
        View Figma Design 
