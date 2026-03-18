@@ -61,41 +61,76 @@
 
 </div>
 
-<!-- ===== HERO WITH VIDEO BACKGROUND ===== -->
-<section class="relative min-h-[80vh] overflow-hidden">
+<!-- ===== PREMIUM HERO SECTION ===== -->
+<section class="relative min-h-screen overflow-hidden">
 
   <!-- 🔥 Background Video -->
-  <video 
-    src="./assets/background video.mp4"
-    autoplay
-    loop
-    muted
-    playsinline
-    class="absolute inset-0 w-full h-full object-cover"
-  ></video>
+  <!-- 🔥 Background Video (Playlist) -->
+<video 
+  id="heroVideo"
+  autoplay
+  muted
+  playsinline
+  class="absolute inset-0 w-full h-full object-cover"
+></video>
 
-  <!-- 🔥 Dark Overlay (text readable করার জন্য) -->
-  <div class="absolute inset-0 bg-black/60"></div>
+  <!-- 🔥 Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
 
-  <!-- 🔥 Hero Content -->
-  <div class="relative hero min-h-[80vh] text-white">
-    <div class="hero-content text-center">
-      <div class="max-w-xl">
-        
-        <h1 class="text-5xl font-bold text-primary">
-          Not Just a Website <br> We Build Your Online Empire 🚀
-        </h1>
+  <!-- ===== HERO CONTENT ===== -->
+  <div class="relative flex items-center justify-center min-h-screen text-white px-6">
 
-        <p class="py-6">
-          Zyntrix Lab helps you dominate online with powerful websites, engaging UI/UX, and smart marketing strategies.
-        </p>
+    <div class="text-center max-w-3xl">
 
-        <a href="#contact" class="btn btn-primary btn-lg">
+      
+
+      <!-- 🔥 Main Heading -->
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+        Not Just a Website <br>
+        <span class="text-primary">We Build Your Online Empire</span>
+      </h1>
+
+      <!-- 🔥 Sub Text -->
+      <p class="text-lg md:text-xl mb-8 opacity-90">
+        Zyntrix Lab helps you dominate online with powerful websites,
+        engaging UI/UX, and smart marketing strategies that convert visitors into customers.
+      </p>
+
+      <!-- 🔥 CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+
+        <a href="#contact" class="btn btn-primary btn-lg shadow-lg">
           Get Free Consultation
         </a>
 
+        <a href="#services" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-black">
+          View Services
+        </a>
+
       </div>
+
+      <!-- 🔥 Stats -->
+      <div class="grid grid-cols-3 gap-6 text-center">
+
+        <div>
+          <h3 class="text-3xl font-bold text-primary">120+</h3>
+          <p class="text-sm opacity-80">Projects</p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold text-primary">80+</h3>
+          <p class="text-sm opacity-80">Clients</p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold text-primary">5★</h3>
+          <p class="text-sm opacity-80">Rating</p>
+        </div>
+
+      </div>
+
     </div>
+
   </div>
 
 </section>
