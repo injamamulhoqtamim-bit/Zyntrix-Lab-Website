@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zyntrix Lab</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-base-200">
+
+<!-- ===== NAVBAR ===== -->
+<div class="navbar bg-base-100 shadow-md px-4 py-3">
+
+  <div class="flex-1">
+
+    <!-- ❌ btn remove করা হয়েছে -->
+    <a class="flex items-center gap-3 text-2xl font-bold text-primary">
+
+      <!-- 🔥 Logo Video -->
+      <video 
+        src="./assets/video gif.webm"
+        class="w-16 h-16 rounded-full object-cover shadow-md"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+
+      <!-- 🔥 Animated Brand Name -->
+<span class="animated-text">
+  Zyntrix Lab
+</span>
+
+  </div>
+
+  <div class="flex-none flex items-center">
+    <a href="#services" class="btn btn-ghost">Services</a>
+    <a href="#contact" class="btn btn-primary">Contact</a>
+  </div>
+
+</div>
+
+<!-- ===== HERO WITH VIDEO BACKGROUND ===== -->
+<section class="relative min-h-[80vh] overflow-hidden">
+
+  <!-- 🔥 Background Video -->
+  <video 
+    src="./assets/background video.mp4"
+    autoplay
+    loop
+    muted
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover"
+  ></video>
+
+  <!-- 🔥 Dark Overlay (text readable করার জন্য) -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- 🔥 Hero Content -->
+  <div class="relative hero min-h-[80vh] text-white">
+    <div class="hero-content text-center">
+      <div class="max-w-xl">
+        
+        <h1 class="text-5xl font-bold text-primary">
+          Grow Your Business Online 🚀
+        </h1>
+
+        <p class="py-6">
+          Professional Web Development, UI/UX Design and Digital Marketing services.
+        </p>
+
+        <a href="#contact" class="btn btn-primary btn-lg">
+          Get Started
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="py-16 bg-base-100">
+  <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+
+  <div class="grid md:grid-cols-3 gap-8 px-8">
+
+    <div class="card bg-base-200 shadow-xl">
+      <div class="card-body">
+        <h3 class="card-title text-primary">🌐 Web Development</h3>
+        <p>Modern and responsive business websites.</p>
+      </div>
+    </div>
+
+    <div class="card bg-base-200 shadow-xl">
+      <div class="card-body">
+        <h3 class="card-title text-primary">🎨 UI/UX Design</h3>
+        <p>Clean and user-friendly interface design.</p>
+      </div>
+    </div>
+
+    <div class="card bg-base-200 shadow-xl">
+      <div class="card-body">
+        <h3 class="card-title text-primary">📈 Digital Marketing</h3>
+        <p>Facebook Ads, SEO and social media growth.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="py-16 bg-base-200">
+  <h2 class="text-4xl font-bold text-center mb-10">Contact Us</h2>
+
+  <div class="flex justify-center">
+    <div class="card w-full max-w-lg bg-base-100 shadow-xl">
+      <div class="card-body">
+
+        <form id="contactForm">
+
+          <input type="text" placeholder="Your Name" class="input input-bordered w-full mb-4" required>
+
+          <input type="email" placeholder="Your Email" class="input input-bordered w-full mb-4" required>
+
+          <textarea placeholder="Your Message" class="textarea textarea-bordered w-full mb-4" required></textarea>
+
+          <button type="submit" class="btn btn-primary w-full">Send Message</button>
+
+        </form>
+
+        <p id="successMsg" class="text-green-500 text-center mt-4 hidden">
+          ✅ Message sent successfully!
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer footer-center p-6 bg-base-100">
+  <aside>
+    <p>© 2026 Zyntrix Lab — All rights reserved</p>
+  </aside>
+</footer>
+
+<!-- 👉 External JS File Link -->
+<script src="script.js"></script>
+
+</body>
+</html>

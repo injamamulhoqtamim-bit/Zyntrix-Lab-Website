@@ -1,0 +1,33 @@
+/* 🔥 Animated Brand Text */
+
+.animated-text {
+  font-weight: 800;
+  font-size: 1.8rem;
+
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff9900,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff,
+    #ff0000
+  );
+
+  background-size: 800% 800%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 8s ease infinite;
+}
+
+/* Animation Keyframes */
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
