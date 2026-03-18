@@ -192,21 +192,24 @@
 
   <div class="grid md:grid-cols-3 gap-8 px-8">
 
-    <div class="card bg-base-200 shadow-xl">
+    <!-- LEFT -->
+    <div class="card bg-base-200 shadow-xl service-card from-left">
       <div class="card-body">
         <h3 class="card-title text-primary">🌐 Web Development</h3>
         <p>Modern and responsive business websites.</p>
       </div>
     </div>
 
-    <div class="card bg-base-200 shadow-xl">
+    <!-- MIDDLE -->
+    <div class="card bg-base-200 shadow-xl service-card from-bottom">
       <div class="card-body">
         <h3 class="card-title text-primary">🎨 UI/UX Design</h3>
         <p>Clean and user-friendly interface design.</p>
       </div>
     </div>
 
-    <div class="card bg-base-200 shadow-xl">
+    <!-- RIGHT -->
+    <div class="card bg-base-200 shadow-xl service-card from-right">
       <div class="card-body">
         <h3 class="card-title text-primary">📈 Digital Marketing</h3>
         <p>Facebook Ads, SEO and social media growth.</p>
@@ -217,9 +220,10 @@
 </section>
 
 <!-- ===== PROJECTS SECTION ===== -->
-<section id="projects" class="py-20 bg-base-200">
+<!-- ===== PROJECTS SECTION (SLIDER) ===== -->
+<section id="projects" class="py-20 bg-base-200 overflow-hidden">
 
-  <div class="max-w-7xl mx-auto px-6">
+  <div class="max-w-6xl mx-auto px-6 relative">
 
     <h2 class="text-4xl font-bold text-center text-primary mb-12">
       Our Projects
@@ -230,54 +234,96 @@
       and achieve real results.
     </p>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <!-- 🔥 Slider Wrapper -->
+    <div class="relative">
 
-      <!-- 🔥 Project Card 1 -->
-      <div class="card bg-base-100 shadow-xl">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d" alt="Project 1">
-        </figure>
-        <div class="card-body">
-          <h3 class="card-title">E-commerce Website</h3>
-          <p>Complete online store with payment integration.</p>
-          <div class="card-actions justify-end">
-            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-          </div>
-        </div>
-      </div>
+      <!-- LEFT BUTTON -->
+      <button id="prevBtn"
+        class="btn btn-circle absolute left-0 top-1/2 -translate-y-1/2 z-10">
+        ❮
+      </button>
 
-      <!-- 🔥 Project Card 2 -->
-      <div class="card bg-base-100 shadow-xl">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d" alt="Project 2">
-        </figure>
-        <div class="card-body">
-          <h3 class="card-title">Business Landing Page</h3>
-          <p>High-converting landing page for a startup.</p>
-          <div class="card-actions justify-end">
-            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-          </div>
-        </div>
-      </div>
+      <!-- RIGHT BUTTON -->
+      <button id="nextBtn"
+        class="btn btn-circle absolute right-0 top-1/2 -translate-y-1/2 z-10">
+        ❯
+      </button>
 
-      <!-- 🔥 Project Card 3 -->
-      <div class="card bg-base-100 shadow-xl">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" alt="Project 3">
-        </figure>
-        <div class="card-body">
-          <h3 class="card-title">Portfolio Website</h3>
-          <p>Personal brand website for a creative professional.</p>
-          <div class="card-actions justify-end">
-            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-          </div>
-        </div>
-      </div>
+      <!-- SLIDER TRACK -->
+      <div id="projectSlider"
+        class="flex gap-8 transition-transform duration-500">
+<!-- Card -1  -->
+        <!-- 🔥 E-VOTING APP (FIGMA DESIGN) -->
+<div class="card bg-base-100 shadow-xl min-w-full md:min-w-[32%]">
 
-    </div>
+  <figure>
+    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984">
+  </figure>
+
+  <div class="card-body">
+
+    <h3 class="card-title">E-Voting App — UI/UX Design</h3>
+
+    <p>
+      Secure online voting system designed in Figma with modern UI/UX principles.
+    </p>
+
+    <!-- 🔥 FIGMA LINK BUTTON -->
+    <a href="https://www.figma.com/design/f5fPOItcW37J6lwI01t2XS/e-voting-bd?node-id=0-1&p=f"
+       target="_blank"
+       class="btn btn-primary btn-sm">
+       View Figma Design 
+    </a>
 
   </div>
 
+</div>
+
+        <!-- 🔥 TEAM MEMBER 1 PORTFOLIO -->
+<div class="card bg-base-100 shadow-xl min-w-full md:min-w-[32%]">
+  <figure>
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+  </figure>
+
+  <div class="card-body">
+    <h3 class="card-title">Portfolio — Team Member 1</h3>
+    <p>Personal portfolio website showcasing skills and projects.</p>
+
+    <!-- 🔥 LIVE LINK -->
+    <a href="https://injamamulhoqtamim-bit.github.io/My-Portfolio/"
+       target="_blank"
+       class="btn btn-primary btn-sm">
+       View Live Site 
+    </a>
+
+  </div>
+</div>
+
+
+<!-- 🔥 TEAM MEMBER 2 PORTFOLIO -->
+<div class="card bg-base-100 shadow-xl min-w-full md:min-w-[32%]">
+  <figure>
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+  </figure>
+
+  <div class="card-body">
+    <h3 class="card-title">Portfolio — Team Member 2</h3>
+    <p>Creative developer portfolio with UI/UX projects.</p>
+
+    <!-- 🔥 LIVE LINK -->
+    <a href="https://rahathassan.github.io/My-Portfolio/"
+       target="_blank"
+       class="btn btn-primary btn-sm">
+       View Live Site
+    </a>
+
+  </div>
+</div>
+
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- ===== CONTACT ===== -->

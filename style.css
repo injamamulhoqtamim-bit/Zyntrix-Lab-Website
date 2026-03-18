@@ -31,3 +31,31 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* ===== SCROLL ANIMATION ===== */
+
+.service-card {
+  opacity: 0;
+  transition: all 0.9s ease;
+}
+
+/* Left */
+.from-left {
+  transform: translateX(-100px);
+}
+
+/* Right */
+.from-right {
+  transform: translateX(100px);
+}
+
+/* Bottom */
+.from-bottom {
+  transform: translateY(100px);
+}
+
+/* Active (when visible) */
+.show {
+  opacity: 1;
+  transform: translate(0);
+}
