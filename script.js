@@ -76,3 +76,4 @@ function updateSlider() {
   const width = slider.children[0].offsetWidth + 32; // gap included
   slider.style.transform = `translateX(-${index * width}px)`;
 }
+
