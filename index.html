@@ -19,47 +19,54 @@
 <!-- ===== NAVBAR ===== -->
 <div class="navbar bg-base-100 shadow-md px-4 py-3">
 
+  <!-- LEFT -->
   <div class="flex-1">
-
-    <!-- ❌ btn remove করা হয়েছে -->
-    <a class="flex items-center gap-3 text-2xl font-bold text-primary">
-
-      <!-- 🔥 Logo Video -->
+    <a class="flex items-center gap-3 text-xl md:text-2xl font-bold text-primary">
       <video 
         src="./assets/video gif.webm"
-        class="w-16 h-16 rounded-full object-cover shadow-md"
-        autoplay
-        loop
-        muted
-        playsinline
+        class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover shadow-md"
+        autoplay loop muted playsinline
       ></video>
 
-      <!-- 🔥 Animated Brand Name -->
-<span class="animated-text">
-  Zyntrix Lab
-</span>
+      <span class="animated-text hidden sm:inline">
+        Zyntrix Lab
+      </span>
 
+    </a>
   </div>
 
- <div class="flex-none flex items-center gap-1">
+  <!-- MOBILE MENU -->
+  <div class="dropdown dropdown-end lg:hidden">
+    <label tabindex="0" class="btn btn-ghost btn-circle">
+      ☰
+    </label>
 
-  <a href="#" class="btn btn-ghost">Home</a>
+    <ul tabindex="0"
+      class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
 
-  <a href="#about" class="btn btn-ghost">About</a>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#support">Support</a></li>
+      <li><a href="#contact">Contact</a></li>
 
-  <a href="#services" class="btn btn-ghost">Services</a>
+    </ul>
+  </div>
 
-  <a href="#projects" class="btn btn-ghost">Projects</a>
-
-  <a href="#team" class="btn btn-ghost">Team</a>
-
-  <a href="#blog" class="btn btn-ghost">Blog</a>
-
-  <a href="#support" class="btn btn-ghost">Support</a>
-
-  <a href="#contact" class="btn btn-primary">Contact</a>
-
-</div>
+  <!-- DESKTOP MENU -->
+  <div class="hidden lg:flex gap-1">
+    <a href="#" class="btn btn-ghost">Home</a>
+    <a href="#about" class="btn btn-ghost">About</a>
+    <a href="#services" class="btn btn-ghost">Services</a>
+    <a href="#projects" class="btn btn-ghost">Projects</a>
+    <a href="#team" class="btn btn-ghost">Team</a>
+    <a href="#blog" class="btn btn-ghost">Blog</a>
+    <a href="#support" class="btn btn-ghost">Support</a>
+    <a href="#contact" class="btn btn-primary">Contact</a>
+  </div>
 
 </div>
 
@@ -79,6 +86,7 @@
   <!-- 🔥 Gradient Overlay -->
   <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
 
+
   <!-- ===== HERO CONTENT ===== -->
   <div class="relative flex items-center justify-center min-h-screen text-white px-6">
 
@@ -87,7 +95,7 @@
       
 
       <!-- 🔥 Main Heading -->
-      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight mb-6">
         Design. Develop. Grow. <br>
         <span class="text-primary">We Build Your Online Empire</span>
       </h1>
@@ -112,7 +120,7 @@
       </div>
 
       <!-- 🔥 Stats -->
-      <div class="grid grid-cols-3 gap-6 text-center">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
 
         <div>
           <h3 class="text-3xl font-bold text-primary">4+</h3>
@@ -143,7 +151,7 @@
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- 🔥 Title + GIF -->
-<div class="flex items-center justify-center gap-4 mb-12">
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 text-center">
 
   <img 
     src="./assets/about us.gif"
@@ -270,21 +278,20 @@
       and achieve real results.
     </p>
 
-    <!-- 🔥 Slider Wrapper -->
-    <!-- 🔥 BUTTON OVERLAY (NO JUMP) -->
+   <!-- 🔥 BUTTON OVERLAY -->
 <div class="pointer-events-none absolute inset-0 flex items-center justify-between px-2 z-10">
 
   <!-- LEFT -->
   <button id="prevBtn"
     class="pointer-events-auto btn btn-circle bg-primary text-white shadow-lg
-           hover:bg-primary-focus w-12 h-12 text-xl">
+           hover:bg-primary-focus w-10 h-10 md:w-12 md:h-12 text-lg md:text-xl">
     ❮
   </button>
 
   <!-- RIGHT -->
   <button id="nextBtn"
     class="pointer-events-auto btn btn-circle bg-primary text-white shadow-lg
-           hover:bg-primary-focus w-12 h-12 text-xl">
+           hover:bg-primary-focus w-10 h-10 md:w-12 md:h-12 text-lg md:text-xl">
     ❯
   </button>
 
@@ -440,7 +447,7 @@
 
 </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
       <!-- Member 1 -->
       <div class="card bg-base-200 shadow-xl">
@@ -535,7 +542,7 @@
 <!-- ===== SUPPORT ===== -->
 <section id="support" class="py-20 bg-base-100 border-b border-base-300">
 
-  <div class="max-w-4xl mx-auto px-6 text-center md:text-left">
+  <div class="max-w-4xl mx-auto px-6 text-center">
 
     <!-- 🔥 Title + Small GIF (CENTERED) -->
 <div class="flex flex-col items-center mb-6">
