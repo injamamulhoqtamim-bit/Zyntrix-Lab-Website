@@ -1,9 +1,13 @@
 // ===== CONTACT FORM =====
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  document.getElementById("successMsg").classList.remove("hidden");
-  this.reset();
-});
+const form = document.getElementById("contactForm");
+
+if (form) {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("successMsg").classList.remove("hidden");
+    this.reset();
+  });
+}
 
 // ===== HERO VIDEO =====
 const heroVideo = document.getElementById("heroVideo");
@@ -94,7 +98,7 @@ function typeEffect() {
     isDeleting = false;
   }
 
-  setTimeout(typeEffect, isDeleting ? 50 : 100);
+  setTimeout(typeEffect, isDeleting ? 100 : 200);
 }
 
 typeEffect();
