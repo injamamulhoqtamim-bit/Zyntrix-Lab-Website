@@ -1,39 +1,35 @@
 /* 🔥 Animated Brand Text */
 
 .animated-text {
-  display: inline-block;
   font-weight: 800;
   font-size: 1.8rem;
-  color: #ffffff;
+
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff9900,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff,
+    #ff0000
+  );
+
+  background-size: 800% 800%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 8s ease infinite;
 }
 
-/* Each letter wave */
-.animated-text span {
-  display: inline-block;
-  animation: wave 1.5s ease-in-out infinite;
-}
+/* Animation Keyframes */
 
-/* Delay for wave effect */
-.animated-text span:nth-child(1) { animation-delay: 0s; }
-.animated-text span:nth-child(2) { animation-delay: 0.1s; }
-.animated-text span:nth-child(3) { animation-delay: 0.2s; }
-.animated-text span:nth-child(4) { animation-delay: 0.3s; }
-.animated-text span:nth-child(5) { animation-delay: 0.4s; }
-.animated-text span:nth-child(6) { animation-delay: 0.5s; }
-.animated-text span:nth-child(7) { animation-delay: 0.6s; }
-.animated-text span:nth-child(8) { animation-delay: 0.7s; }
-.animated-text span:nth-child(9) { animation-delay: 0.8s; }
-.animated-text span:nth-child(10) { animation-delay: 0.9s; }
-.animated-text span:nth-child(11) { animation-delay: 1s; }
-
-/* Wave keyframes */
-@keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ===== SCROLL ANIMATION ===== */
@@ -72,4 +68,16 @@ section {
 img, video {
   max-width: 100%;
   height: auto;
+}
+
+/* 🔥 Typing Cursor Effect */
+#typing-text::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+  margin-left: 3px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }

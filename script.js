@@ -1,16 +1,13 @@
+// ===== CONTACT FORM =====
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
-
   document.getElementById("successMsg").classList.remove("hidden");
-
   this.reset();
 });
 
-// ===== HERO VIDEO PLAYLIST =====
-
+// ===== HERO VIDEO =====
 const heroVideo = document.getElementById("heroVideo");
 
-// 🔥 Video list (assets folder এ রাখবে)
 const videoList = [
   "./assets/hero background - Trim.mp4",
   "./assets/hero3 - Trim.mp4",
@@ -19,10 +16,8 @@ const videoList = [
 
 let currentVideo = 0;
 
-// First video load
 heroVideo.src = videoList[currentVideo];
 
-// When video ends → play next
 heroVideo.addEventListener("ended", () => {
   currentVideo = (currentVideo + 1) % videoList.length;
   heroVideo.src = videoList[currentVideo];
@@ -30,7 +25,6 @@ heroVideo.addEventListener("ended", () => {
 });
 
 // ===== SCROLL ANIMATION =====
-
 const cards = document.querySelectorAll(".service-card");
 
 function revealOnScroll() {
@@ -46,34 +40,61 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
-
-// Page load এও check করবে
 revealOnScroll();
 
 // ===== PROJECT SLIDER =====
-
 const slider = document.getElementById("projectSlider");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 
-let index = 0;
+let slideIndex = 0;
 
 nextBtn.addEventListener("click", () => {
-  if (index < slider.children.length - 1) {
-    index++;
+  if (slideIndex < slider.children.length - 1) {
+    slideIndex++;
     updateSlider();
   }
 });
 
 prevBtn.addEventListener("click", () => {
-  if (index > 0) {
-    index--;
+  if (slideIndex > 0) {
+    slideIndex--;
     updateSlider();
   }
 });
 
 function updateSlider() {
-  const width = slider.children[0].offsetWidth + 32; // gap included
-  slider.style.transform = `translateX(-${index * width}px)`;
+  const width = slider.children[0].offsetWidth + 32;
+  slider.style.transform = `translateX(-${slideIndex * width}px)`;
 }
 
+// ===== TYPING EFFECT =====
+const text = "Zyntrix Lab";
+const typingElement = document.getElementById("typing-text");
+
+let typingIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  if (!typingElement) return; // safety
+
+  if (!isDeleting) {
+    typingElement.textContent = text.substring(0, typingIndex++);
+  } else {
+    typingElement.textContent = text.substring(0, typingIndex--);
+  }
+
+  if (typingIndex === text.length + 1) {
+    isDeleting = true;
+    setTimeout(typeEffect, 1000);
+    return;
+  }
+
+  if (typingIndex === 0) {
+    isDeleting = false;
+  }
+
+  setTimeout(typeEffect, isDeleting ? 50 : 100);
+}
+
+typeEffect();
