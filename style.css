@@ -89,3 +89,23 @@ img, video {
 video {
   object-fit: cover;
 }
+
+.navbar a {
+  overflow: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  iframe[title="chat widget"] {
+    right: 10px !important;
+    bottom: 10px !important;
+    max-width: 90% !important;
+  }
+}
