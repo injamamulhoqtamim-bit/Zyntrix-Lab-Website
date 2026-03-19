@@ -98,3 +98,12 @@ function typeEffect() {
 }
 
 typeEffect();
+
+// ===== LIVE CHAT BUTTON =====
+const liveChatBtn = document.getElementById("liveChatBtn");
+
+liveChatBtn.addEventListener("click", () => {
+  if (typeof Tawk_API !== "undefined") {
+    Tawk_API.maximize(); // open chat widget
+  }
+});
