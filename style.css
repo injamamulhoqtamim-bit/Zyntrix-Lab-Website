@@ -98,14 +98,21 @@ body {
   overflow-x: hidden;
 }
 
-.navbar {
-  overflow: hidden;
-}
+
 
 @media (max-width: 768px) {
   iframe[title="chat widget"] {
     right: 10px !important;
     bottom: 10px !important;
-    max-width: 90% !important;
+    max-width: 85% !important;
+    z-index: 9999 !important;
   }
+}
+
+
+.dropdown-content {
+  z-index: 999 !important;
+}
+button, label {
+  cursor: pointer;
 }
