@@ -83,7 +83,7 @@ img, video {
 }
 
 #projectSlider {
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 video {
@@ -112,9 +112,12 @@ body {
   z-index: 999 !important;
 }
 button, label {
-  cursor: pointer;
+  cursor: pointer;s
 }
+
+
 .dropdown-content {
   right: 0;
   left: auto;
+  position: absolute;
 }

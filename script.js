@@ -53,8 +53,17 @@ const prevBtn = document.getElementById("prevBtn");
 
 let slideIndex = 0;
 
+function getVisibleCards() {
+  if (window.innerWidth < 768) return 1; // mobile
+  if (window.innerWidth < 1024) return 2; // tablet
+  return 3; // desktop
+}
+
 nextBtn.addEventListener("click", () => {
-  if (slideIndex < slider.children.length - 1) {
+  const visibleCards = getVisibleCards();
+  const maxIndex = slider.children.length - visibleCards;
+
+  if (slideIndex < maxIndex) {
     slideIndex++;
     updateSlider();
   }
