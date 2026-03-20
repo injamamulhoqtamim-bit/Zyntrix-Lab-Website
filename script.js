@@ -122,3 +122,21 @@ if (liveChatBtn) {
     }
   });
 }
+
+// ===== TEAM SCROLL ANIMATION =====
+const teamCards = document.querySelectorAll(".team-animate");
+
+function revealTeam() {
+  const triggerBottom = window.innerHeight * 0.60;
+
+  teamCards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    if (cardTop < triggerBottom) {
+      card.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealTeam);
+revealTeam();
