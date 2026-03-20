@@ -112,7 +112,7 @@ body {
   z-index: 999 !important;
 }
 button, label {
-  cursor: pointer;s
+  cursor: pointer;
 }
 
 
@@ -120,4 +120,88 @@ button, label {
   right: 0;
   left: auto;
   position: absolute;
+}
+
+/* 🔥 TEAM CARD ANIMATED GLOW */
+.glow-card {
+  position: relative;
+  border-radius: 1rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Animated Border */
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    270deg,
+    #00f0ff,
+    #ff00c8,
+    #00ff88,
+    #ffd700,
+    #00f0ff
+  );
+
+  background-size: 400% 400%;
+  animation: glowRotate 6s linear infinite;
+
+  filter: blur(10px);
+  z-index: -1;
+}
+
+/* Inner Background (card color fix) */
+.glow-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1f2937; /* same as bg-base-200 fallback */
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* 🔥 Animation */
+@keyframes glowRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.team-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.glow-card a:nth-child(1):hover img {
+  box-shadow: 0 0 15px #1877f2; /* Facebook blue */
+}
+
+.glow-card a:nth-child(2):hover img {
+  box-shadow: 0 0 15px #0a66c2; /* LinkedIn */
+}
+
+.glow-card a:nth-child(3):hover img {
+  box-shadow: 0 0 15px #ff0000; /* Email */
+}
+
+/* 🔥 TEAM IMAGE HOVER ZOOM EFFECT */
+.glow-card img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glow-card img:hover {
+  transform: scale(1.2); /* zoom effect */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
