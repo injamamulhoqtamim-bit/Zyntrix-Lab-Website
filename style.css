@@ -128,37 +128,31 @@ button, label {
   border-radius: 1rem;
   z-index: 1;
   overflow: hidden;
+  color: #111; /* dark text */
 }
 
 /* Animated Border */
 .glow-card::before {
   content: "";
   position: absolute;
-  inset: -3px;
+  inset: -2px; /* border size */
   border-radius: inherit;
 
-  background: linear-gradient(
-    270deg,
-    #00f0ff,
-    #ff00c8,
-    #00ff88,
-    #ffd700,
-    #00f0ff
-  );
+  background: 
+    #fdf9e1;
 
   background-size: 400% 400%;
   animation: glowRotate 6s linear infinite;
 
-  filter: blur(10px);
-  z-index: -1;
+  z-index: -2;
 }
 
 /* Inner Background (card color fix) */
 .glow-card::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: #1f2937; /* same as bg-base-200 fallback */
+  inset: 2px; /* border er vitore thakbe */
+  background: hsl(var(--b1)); /* ✅ DaisyUI auto theme color */
   border-radius: inherit;
   z-index: -1;
 }
