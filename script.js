@@ -13,9 +13,9 @@ if (form) {
 const heroVideo = document.getElementById("heroVideo");
 
 const videoList = [
-  "./assets/hero background - Trim.mp4",
-  "./assets/hero3 - Trim.mp4",
-  "./assets/hero4 - Trim.mp4"
+  "./assets/hero1- Trim.mp4",
+  "./assets/hero3 - Trim - Trim3.mp4",
+  "./assets/hero2 - Trim2.mp4"
 ];
 
 let currentVideo = 0;
