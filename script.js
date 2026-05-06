@@ -225,31 +225,55 @@ const fileInput = document.getElementById("fileUpload");
 // const serviceSelect = document.getElementById("serviceSelect");
 // const detailsBox = document.getElementById("detailsBox");
 
-serviceForm.addEventListener("submit", function (e) {
+serviceForm.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const name = document.getElementById("nameInput").value;
   const email = document.getElementById("emailInput").value;
   const whatsapp = document.getElementById("whatsappInput").value;
   const service = serviceSelect.value;
-  const message = detailsBox.value;
-  const file = fileInput.files[0];
 
   if (!name || !email || !whatsapp || !service) {
     showToast("⚠️ Please fill all required fields!", "bg-red-500");
     return;
   }
 
-  if (file) {
-    console.log("📎 File:", file.name);
+  try {
+
+    // ADMIN EMAIL
+    await emailjs.sendForm(
+      "service_2udb0pb",
+      "template_0l8uj17",
+      serviceForm
+    );
+
+    // AUTO REPLY
+    await emailjs.send(
+      "service_2udb0pb",
+      "template_5aj0rqm",
+      {
+        name: name,
+        email: email,
+        service: service,
+        to_email: email
+      }
+    );
+
+    showToast("✅ Request submitted successfully!", "bg-green-500");
+
+    serviceForm.reset();
+
+    packageInput.classList.add("hidden");
+    detailsBox.classList.add("hidden");
+
+    modal.classList.add("hidden");
+
+  } catch (error) {
+
+    console.error(error);
+
+    showToast("❌ Failed to send email!", "bg-red-500");
   }
-
-  showToast("✅ Request Submitted Successfully!", "bg-green-500");
-
-  serviceForm.reset();
-  detailsBox.classList.add("hidden");
-
-  modal.classList.add("hidden");
 });
 packageInput.classList.add("hidden");
 packageInput.value = "";

@@ -114,65 +114,98 @@ class="text-lg sm:text-2xl md:text-4xl font-bold text-base-content break-words">
     </h2>
 
     <!-- FORM -->
-    <form id="serviceForm" class="space-y-4">
+    <form id="serviceForm"
+      class="space-y-4"
+      enctype="multipart/form-data">
 
-      <input id="nameInput" type="text" placeholder="Your Name"
-        class="input input-bordered w-full" required>
-
-      <input id="emailInput" type="email" placeholder="Email"
-        class="input input-bordered w-full" required>
-
-      <input id="whatsappInput" type="text" placeholder="Your WhatsApp Number"
-        class="input input-bordered w-full" required>
-
-      <!-- SELECT -->
-      <select id="serviceSelect"
-        class="select select-bordered w-full" required>
-        <option value="">Select Service</option>
-        <option>UI/UX Design</option>
-        <option>Digital Marketing</option>
-        <option>Web Development</option>
-        <option>Email Marketing</option>
-        <option>SEO Optimization</option>
-      </select>
-
-      <!-- 🔥 SELECTED PACKAGE (AUTO SHOW) -->
-<input 
-  type="text"
-  id="selectedPackage"
-  class="input input-bordered w-full hidden"
-  readonly
->
-
-      <!-- DETAILS (hidden initially) -->
-     <textarea id="detailsBox"
-  placeholder="Write your project details..."
-  class="textarea textarea-bordered w-full hidden"></textarea>
-
-        <!-- 📎 FILE UPLOAD -->
-<div>
-  <label class="font-semibold text-sm mb-1 block">
-    Upload Design / Reference (Image or PDF)
-  </label>
-
+  <!-- NAME -->
   <input 
-    type="file"
-    id="fileUpload"
-    accept="image/*,.pdf"
-    class="file-input file-input-bordered w-full"
+    id="nameInput"
+    name="name"
+    type="text"
+    placeholder="Your Name"
+    class="input input-bordered w-full"
+    required
   >
 
-  <p class="text-xs opacity-60 mt-1">
-    You can upload UI design, screenshots, or PDF brief
-  </p>
-</div>
+  <!-- EMAIL -->
+  <input 
+    id="emailInput"
+    name="email"
+    type="email"
+    placeholder="Email"
+    class="input input-bordered w-full"
+    required
+  >
 
-      <button type="submit"
-        class="btn btn-primary w-full">
-        Submit Request
-      </button>
+  <!-- WHATSAPP -->
+  <input 
+    id="whatsappInput"
+    name="whatsapp"
+    type="text"
+    placeholder="Your WhatsApp Number"
+    class="input input-bordered w-full"
+    required
+  >
 
-    </form>
+  <!-- SERVICE SELECT -->
+  <select 
+    id="serviceSelect"
+    name="service"
+    class="select select-bordered w-full"
+    required
+  >
+    <option value="">Select Service</option>
+    <option>UI/UX Design</option>
+    <option>Digital Marketing</option>
+    <option>Web Development</option>
+    <option>Email Marketing</option>
+    <option>SEO Optimization</option>
+  </select>
+
+  <!-- SELECTED PACKAGE -->
+  <input 
+    type="text"
+    id="selectedPackage"
+    name="selected_package"
+    class="input input-bordered w-full hidden"
+    readonly
+  >
+
+  <!-- DETAILS -->
+  <textarea 
+    id="detailsBox"
+    name="message"
+    placeholder="Write your project details..."
+    class="textarea textarea-bordered w-full hidden">
+  </textarea>
+
+  <!-- FILE UPLOAD -->
+  <div>
+    <label class="font-semibold text-sm mb-1 block">
+      Upload Design / Reference (Image or PDF)
+    </label>
+
+    <input 
+      type="file"
+      id="fileUpload"
+      name="attachment"
+      accept="image/*,.pdf"
+      class="file-input file-input-bordered w-full"
+    >
+
+    <p class="text-xs opacity-60 mt-1">
+      You can upload UI design, screenshots, or PDF brief
+    </p>
+  </div>
+
+  <!-- SUBMIT -->
+  <button type="submit"
+    class="btn btn-primary w-full">
+    Submit Request
+  </button>
+
+</form>
 
   </div>
 </div>
@@ -1095,5 +1128,16 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
+
+<script 
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script>
+emailjs.init({
+  publicKey: "lDJdSjc9ad2cpq6KQ",
+});
+</script>
 </body>
 </html>
