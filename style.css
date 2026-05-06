@@ -230,3 +230,55 @@ button, label {
 .delay-2 {
   transition-delay: 0.6s;
 }
+
+/* ===== TICKER WRAPPER ===== */
+.ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #1e3a8a;
+  color: white;
+  padding: 10px 0;
+}
+.ticker-wrapper {
+  margin-top: 80px; /* navbar height অনুযায়ী adjust করো */
+}
+
+/* ===== TICKER TEXT ===== */
+.ticker {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+
+  animation: scrollTicker 20s linear infinite; /* speed slow & smooth */
+}
+/* icon style */
+.ticker i {
+  color: #38bdf8; /* light blue */
+  font-size: 14px;
+}
+
+/* Hover করলে pause (optional but premium feel) */
+.ticker-wrapper:hover .ticker {
+  animation-play-state: paused;
+}
+
+/* TEXT STYLE */
+.ticker span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+/* 🔥 PERFECT LOOP ANIMATION */
+@keyframes scrollTicker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
