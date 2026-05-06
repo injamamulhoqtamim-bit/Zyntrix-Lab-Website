@@ -140,3 +140,132 @@ function revealTeam() {
 
 window.addEventListener("scroll", revealTeam);
 revealTeam();
+
+
+// ===== TOAST + NOTIFICATION SYSTEM =====
+
+let notificationCount = 0;
+
+const toastContainer = document.getElementById("toastContainer");
+const notificationBadge = document.getElementById("notificationCount");
+
+// সব order button select
+const orderButtons = document.querySelectorAll(".order-btn");
+
+orderButtons.forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const selectedService = this.getAttribute("data-service");
+
+    // 🔥 Modal open
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+
+    // 🔥 Service auto select
+    if (selectedService === "Starter") {
+  serviceSelect.value = "Web Development";
+
+  packageInput.value = "Starter Package - ৳15,000";
+  packageInput.classList.remove("hidden");
+} 
+else if (selectedService === "Pro") {
+  serviceSelect.value = "Digital Marketing";
+
+  packageInput.value = "Pro Package - ৳25,000";
+  packageInput.classList.remove("hidden");
+}
+
+    // 🔔 Notification count increase
+    notificationCount++;
+    notificationBadge.innerText = notificationCount;
+    notificationBadge.classList.remove("hidden");
+
+    // 🔥 Toast
+    showToast("📩 Please fill the service form", "bg-blue-500");
+  });
+});
+
+
+// ===== NOTIFICATION MODAL =====
+const notificationBtn = document.getElementById("notificationBtn");
+const modal = document.getElementById("notificationModal");
+const closeModal = document.getElementById("closeModal");
+
+notificationBtn.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+});
+
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+
+// ===== SERVICE SELECT → SHOW DETAILS BOX =====
+const serviceSelect = document.getElementById("serviceSelect");
+const packageInput = document.getElementById("selectedPackage");
+const detailsBox = document.getElementById("detailsBox");
+
+if (serviceSelect) {
+  serviceSelect.addEventListener("change", () => {
+    if (serviceSelect.value !== "") {
+      detailsBox.classList.remove("hidden");
+    } else {
+      detailsBox.classList.add("hidden");
+    }
+  });
+}
+
+// ===== FORM SUBMIT =====
+const serviceForm = document.getElementById("serviceForm");
+const fileInput = document.getElementById("fileUpload");
+
+// ⚠️ এখানে আর declare করো না (already declared above)
+// const serviceSelect = document.getElementById("serviceSelect");
+// const detailsBox = document.getElementById("detailsBox");
+
+serviceForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("nameInput").value;
+  const email = document.getElementById("emailInput").value;
+  const whatsapp = document.getElementById("whatsappInput").value;
+  const service = serviceSelect.value;
+  const message = detailsBox.value;
+  const file = fileInput.files[0];
+
+  if (!name || !email || !whatsapp || !service) {
+    showToast("⚠️ Please fill all required fields!", "bg-red-500");
+    return;
+  }
+
+  if (file) {
+    console.log("📎 File:", file.name);
+  }
+
+  showToast("✅ Request Submitted Successfully!", "bg-green-500");
+
+  serviceForm.reset();
+  detailsBox.classList.add("hidden");
+
+  modal.classList.add("hidden");
+});
+packageInput.classList.add("hidden");
+packageInput.value = "";
+
+// ===== REUSABLE TOAST FUNCTION =====
+function showToast(message, colorClass) {
+  const toast = document.createElement("div");
+
+  toast.className =
+    `${colorClass} text-white px-4 py-3 rounded-lg shadow-lg`;
+
+  toast.innerText = message;
+
+  toastContainer.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
